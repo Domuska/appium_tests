@@ -4,6 +4,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 import org.junit.Before;
@@ -31,7 +33,7 @@ public class NotesTest {
         //File appDir = new File(classpathRoot, "");
         //File appDir = new File(classpathRoot, "");
         //System.out.println(appDir.getAbsolutePath());
-        File app = new File(classpathRoot, "nononsensenotes-debug.apk");
+        File app = new File(classpathRoot, "nononsensenotes-debug-3.apk");
         System.out.println(app.getAbsolutePath());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -45,26 +47,12 @@ public class NotesTest {
     }
 
 
-    @After
-    public void tearDown() throws Exception{
-
-        if(driver != null)
-            driver.quit();
-    }
-
-
-    @Test
-    public void numberUno(){
-
-        //superhyvä testi. 5/5.
-        //kun jatkat hommia:
-        //-avaa toinen intellij projekti, appium_tests/sample-code-master/sample-code....., sieltä kato vähän miten jatketaan
-        WebElement element = driver.findElement(By.xpath("//*[@text='Settings']"));
-        element.click();
-
-        List<WebElement> list = driver.findElementsByClassName("android.widget.TextView");
-        assertEquals("Current theme", list.get(2).getText());
-    }
+//    @After
+//    public void tearDown() throws Exception{
+//
+//        if(driver != null)
+//            driver.quit();
+//    }
 
     /**
      * Use contains parameter in xpath search give incomplete search string
@@ -89,12 +77,55 @@ public class NotesTest {
 //            System.out.println(textViews.get(i).getText());
 //        }
 
-        driver.findElement(By.xpath("//android.widget.TextView@text='" + taskListName + "'"));
+        driver.findElement(By.xpath("//android.widget.TextView[@text='" + taskListName + "']"));
 
     }
 
-    
+    @Test
+    public void testAddNewNoteShouldShowNameInNotesScreen(){
 
+        swipeDrawerclosed();
+
+        WebElement element = driver.findElementByAccessibilityId("Floating action button");
+        element.click();
+
+//        WebElement element =
+    }
+
+    private void swipeDrawerclosed(){
+
+        //resource id: com.nononsenseapps.notepad:id/drawer_layout
+        WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
+        Point point = getPointToRightOfDrawer(drawerLayout);
+        System.out.println("the x: " + point.getX() + " y:" + point.getY());
+
+
+    }
+
+    private Point getPointToRightOfDrawer(WebElement element){
+
+        Point upperLeft = element.getLocation();
+        Dimension dimension = element.getSize();
+        //x, y
+        Double width = dimension.getWidth()*1.2;
+        return new Point(width.intValue(), dimension.getHeight()/2);
+
+    }
+
+
+    @Test
+    public void numberUno(){
+
+        //superhyvä testi. 5/5.
+        //kun jatkat hommia:
+        //-avaa toinen intellij projekti, appium_tests/sample-code-master/sample-code....., sieltä kato vähän miten jatketaan
+
+        WebElement element = driver.findElement(By.xpath("//*[@text='Settings']"));
+        element.click();
+
+        List<WebElement> list = driver.findElementsByClassName("android.widget.TextView");
+        assertEquals("Current theme", list.get(2).getText());
+    }
 
 
 }
