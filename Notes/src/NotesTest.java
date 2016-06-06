@@ -47,12 +47,12 @@ public class NotesTest {
     }
 
 
-//    @After
-//    public void tearDown() throws Exception{
-//
-//        if(driver != null)
-//            driver.quit();
-//    }
+    @After
+    public void tearDown() throws Exception{
+
+        if(driver != null)
+            driver.quit();
+    }
 
     /**
      * Use contains parameter in xpath search give incomplete search string
@@ -86,10 +86,12 @@ public class NotesTest {
 
         swipeDrawerclosed();
 
-        WebElement element = driver.findElementByAccessibilityId("Floating action button");
-        element.click();
 
-//        WebElement element =
+
+//        WebElement element = driver.findElementByAccessibilityId("Floating action button");
+//        element.click();
+
+
     }
 
     private void swipeDrawerclosed(){
@@ -98,7 +100,7 @@ public class NotesTest {
         WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
         Point point = getPointToRightOfDrawer(drawerLayout);
         System.out.println("the x: " + point.getX() + " y:" + point.getY());
-
+        driver.swipe(point.getX(), point.getY(), point.getX()-200, point.getY()-200, 700);
 
     }
 
