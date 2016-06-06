@@ -20,6 +20,8 @@ public class NotesTest {
 
 
     private AppiumDriver<WebElement> driver;
+    private String taskListName = "a random task list";
+    private String noteName = "prepare food";
 
     @Before
     public void setUp() throws Exception{
@@ -42,12 +44,14 @@ public class NotesTest {
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
+
     @After
     public void tearDown() throws Exception{
 
         if(driver != null)
             driver.quit();
     }
+
 
     @Test
     public void numberUno(){
@@ -61,6 +65,35 @@ public class NotesTest {
         List<WebElement> list = driver.findElementsByClassName("android.widget.TextView");
         assertEquals("Current theme", list.get(2).getText());
     }
+
+    /**
+     * Use contains parameter in xpath search give incomplete search string
+     */
+    @Test
+    public void testAddTaskListCheckItIsAddedToDrawer(){
+
+        WebElement element = driver.findElement(By.xpath("//android.widget.TextView[contains(@text, 'Create')]"));
+        element.click();
+        element = driver.findElementByClassName("android.widget.EditText");
+        element.sendKeys(taskListName);
+
+        WebElement okButton = driver.findElement(By.xpath("//*[@text='OK']"));
+        okButton.click();
+
+        WebElement hamburgerButton = driver.findElementByAccessibilityId("Open navigation drawer");
+        hamburgerButton.click();
+
+//        List<WebElement> textViews = driver.findElementsByClassName("android.widget.TextView");
+//
+//        for(int i = 0; i < textViews.size(); i++){
+//            System.out.println(textViews.get(i).getText());
+//        }
+
+        driver.findElement(By.xpath("//android.widget.TextView@text='" + taskListName + "'"));
+
+    }
+
+    
 
 
 
