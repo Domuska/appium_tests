@@ -28,8 +28,8 @@
       <file leaf-file-name="NotesTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="369">
+              <caret line="143" column="64" selection-start-line="143" selection-start-column="64" selection-end-line="143" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,70 +151,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../sample-code-master/sample-code-master/sample-code/examples/java/junit" />
   </component>
-  <component name="RunManager" selected="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen">
-    <configuration default="false" name="NotesTest.numberUno" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="numberUno" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NotesTest.numberZwei" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="numberZwei" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NotesTest.testAddTaskListCheckItIsAddedToDrawer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testAddTaskListCheckItIsAddedToDrawer" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible">
     <configuration default="false" name="NotesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
@@ -244,6 +181,69 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
       <option name="METHOD_NAME" value="testAddNewNoteShouldShowNameInNotesScreen" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.testAddNewNoteWithReminderShouldDisplayReminder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="testAddNewNoteWithReminderShouldDisplayReminder" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.testAddNewNoteWithReminderDateAndTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="testAddNewNoteWithReminderDateAndTime" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="testAddNewNoteWithDueDateCheckDateIsVisible" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -492,19 +492,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.numberUno" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.numberZwei" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListCheckItIsAddedToDrawer" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithReminderShouldDisplayReminder" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithReminderDateAndTime" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListCheckItIsAddedToDrawer" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.numberZwei" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.numberUno" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithReminderDateAndTime" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithReminderShouldDisplayReminder" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -536,39 +536,46 @@
       <option name="project" value="LOCAL" />
       <updated>1465202621964</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Continued with adding new note and shutting the drawer, does not work now">
+      <created>1465204518254</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1465204518254</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotesTest - 2016.06.06 at 12h 00m 30s.xml">
-      <configuration name="NotesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotesTest - 2016.06.06 at 12h 01m 59s.xml">
-      <configuration name="NotesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotesTest - 2016.06.06 at 12h 07m 11s.xml">
-      <configuration name="NotesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 11h 45m 43s.xml">
+    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 16h 16m 41s.xml">
       <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 11h 46m 18s.xml">
+    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 16h 18m 12s.xml">
       <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 12h 07m 34s.xml">
-      <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNewNoteWithDueDateCheckDateIsVisible - 2016.06.06 at 16h 44m 04s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 12h 10m 35s.xml">
-      <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 11m 51s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 12h 11m 06s.xml">
-      <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 13m 10s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 12h 11m 46s.xml">
-      <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 14m 03s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.06 at 12h 13m 58s.xml">
-      <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 16m 12s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 18m 57s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 20m 22s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotesTest_testAddNewNoteWithReminderDateAndTime - 2016.06.06 at 16h 21m 53s.xml">
+      <configuration name="NotesTest.testAddNewNoteWithReminderDateAndTime" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -582,7 +589,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45351472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18367347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -613,7 +620,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Renamed the first proper test, it now adds a new list and makes sure it is present in the list of task lists" />
     <MESSAGE value="Added start of test for closing the drawer and adding a new note in the current notes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added start of test for closing the drawer and adding a new note in the current notes" />
+    <MESSAGE value="Continued with adding new note and shutting the drawer, does not work now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continued with adding new note and shutting the drawer, does not work now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -646,8 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="369">
+          <caret line="143" column="64" selection-start-line="143" selection-start-column="64" selection-end-line="143" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

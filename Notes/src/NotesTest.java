@@ -10,18 +10,22 @@ import org.openqa.selenium.WebElement;
 
 import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.net.URL;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 
 public class NotesTest {
 
 
     private AppiumDriver<WebElement> driver;
+    WebDriverWait driverWait;
     private String taskListName = "a random task list";
     private String noteName = "prepare food";
 
@@ -33,7 +37,7 @@ public class NotesTest {
         //File appDir = new File(classpathRoot, "");
         //File appDir = new File(classpathRoot, "");
         //System.out.println(appDir.getAbsolutePath());
-        File app = new File(classpathRoot, "nononsensenotes-debug-3.apk");
+        File app = new File(classpathRoot, "nononsensenotes-debug-4.apk");
         System.out.println(app.getAbsolutePath());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -44,6 +48,8 @@ public class NotesTest {
         capabilities.setCapability("appActivity", ".activities.ActivityList");
 
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
+        driverWait = new WebDriverWait(driver, 50);
     }
 
 
@@ -83,44 +89,67 @@ public class NotesTest {
 
     @Test
     public void testAddNewNoteShouldShowNameInNotesScreen(){
-
         swipeDrawerclosed();
 
+        createNewNoteWithName(noteName);
+        driver.findElementByAccessibilityId("Navigate up").click();
 
+//        WebDriverWait driverWait = new WebDriverWait(driver, 50);
 
-//        WebElement element = driver.findElementByAccessibilityId("Floating action button");
-//        element.click();
-
-
-    }
-
-    private void swipeDrawerclosed(){
-
-        //resource id: com.nononsenseapps.notepad:id/drawer_layout
-        WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
-        Point point = getPointToRightOfDrawer(drawerLayout);
-        System.out.println("the x: " + point.getX() + " y:" + point.getY());
-        driver.swipe(point.getX(), point.getY(), point.getX()-200, point.getY()-200, 700);
-
-    }
-
-    private Point getPointToRightOfDrawer(WebElement element){
-
-        Point upperLeft = element.getLocation();
-        Dimension dimension = element.getSize();
-        //x, y
-        Double width = dimension.getWidth()*1.2;
-        return new Point(width.intValue(), dimension.getHeight()/2);
-
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='"+ noteName + "']")
+                )
+        );
+        assertNotNull(driver.findElement(By.xpath("//*[@text='"+ noteName + "']")));
     }
 
 
     @Test
-    public void numberUno(){
+    public void testAddNewNoteWithReminderDateAndTime(){
 
-        //superhyvä testi. 5/5.
-        //kun jatkat hommia:
-        //-avaa toinen intellij projekti, appium_tests/sample-code-master/sample-code....., sieltä kato vähän miten jatketaan
+        swipeDrawerclosed();
+
+        createNewNoteWithName(noteName);
+
+        driver.hideKeyboard();
+
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationAdd")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationDate")).click();
+
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                By.xpath("//*[@text='Done']"))
+
+        );
+
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        driver.findElementByAccessibilityId("Navigate up").click();
+    }
+
+    @Test
+    public void testAddNewNoteWithDueDateCheckDateIsVisible(){
+
+        swipeDrawerclosed();
+
+        createNewNoteWithName(noteName);
+        driver.hideKeyboard();
+
+        driver.findElement(By.xpath("//*[@text='Due date']")).click();
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        driver.findElementByAccessibilityId("Navigate up").click();
+
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='"+ noteName + "']")
+                )
+        );
+
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/date"));
+    }
+
+    @Test
+    public void numberUno(){
 
         WebElement element = driver.findElement(By.xpath("//*[@text='Settings']"));
         element.click();
@@ -129,5 +158,26 @@ public class NotesTest {
         assertEquals("Current theme", list.get(2).getText());
     }
 
+
+    private void createNewNoteWithName(String name){
+        driver.findElementByAccessibilityId("Floating action button").click();
+
+        WebElement textView = driver.findElement(By.xpath("//*[@text='Note']"));
+        textView.sendKeys(name);
+    }
+
+    private void swipeDrawerclosed(){
+        WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
+        Point point = getPointToRightOfDrawer(drawerLayout);
+
+        driver.swipe(point.getX(), point.getY(), 1, point.getY(), 300);
+    }
+
+    private Point getPointToRightOfDrawer(WebElement element){
+
+        Dimension dimension = element.getSize();
+        //x, y
+        return new Point(dimension.getWidth()/2, dimension.getHeight()/2);
+    }
 
 }
