@@ -198,6 +198,7 @@ public class NotesTest {
         assertEquals(1, elements.size());
     }
 
+
     @Test
     public void testAddNotesOrderByDueDate(){
 
@@ -241,7 +242,7 @@ public class NotesTest {
         driver.findElement(By.xpath("//*[@text='Order by due date']")).click();
 
         //rely on the fact that in a recyclerview the elements always have the same ID
-        List<WebElement> elements = new ArrayList<>(driver.findElementsByAccessibilityId("Item title"));
+        List<WebElement> elements = getNotesInNotesList();
 
         assertEquals(4, elements.size());
         for(int i = 0; i < elements.size(); i++){
@@ -249,6 +250,8 @@ public class NotesTest {
         }
 
     }
+
+
 
     @Test
     public void testCreateTaskListAndDeleteIt(){
@@ -260,9 +263,6 @@ public class NotesTest {
         driver.findElementByAccessibilityId("Open navigation drawer").click();
 
         //delete the element
-
-//        driver.findElement(By.xpath("//*[@text='"+ taskListName + "']")).click();
-
         driverWait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(
                         By.xpath("//*[@text='"+ taskListName + "']")
@@ -270,7 +270,7 @@ public class NotesTest {
         );
         WebElement taskList = driver.findElement(By.xpath("//*[@text='"+ taskListName + "']"));
         TouchAction longPress = new TouchAction(driver);
-        longPress.longPress(taskList, 1000).release().perform();
+        longPress.longPress(taskList, 2000).release().perform();
 
 
         driver.findElement(By.id("com.nononsenseapps.notepad:id/deleteButton")).click();
@@ -280,6 +280,41 @@ public class NotesTest {
         List<WebElement> elements = driver.findElements(By.xpath("//*[@text='"+ taskListName + "']"));
         assertEquals(0, elements.size());
 
+    }
+
+    @Test
+    public void testCompletedTasksAreCleared(){
+
+        swipeDrawerclosed();
+
+        createNewNoteWithName(noteName1);
+        navigateUp();
+
+        createNewNoteWithName(noteName2);
+        navigateUp();
+
+        createNewNoteWithName(noteName3);
+        navigateUp();
+
+        createNewNoteWithName(noteName4);
+        navigateUp();
+
+        List<WebElement> checkBoxes =  driver.findElements(By.id("com.nononsenseapps.notepad:id/checkbox"));
+        checkBoxes.get(1).click();
+        checkBoxes.get(3).click();
+
+        driver.findElementByAccessibilityId("More options").click();
+        driver.findElement(By.xpath("//*[@text='Clear completed']")).click();
+        driver.findElement(By.xpath("//*[@text='OK']")).click();
+
+        List<WebElement> remainingTasks = getNotesInNotesList();
+        List<String> noteTitles = new ArrayList<>();
+        for(int i = 0; i < noteTitles.size(); i++){
+            noteTitles.add(remainingTasks.get(i).getText());
+        }
+
+        assert(!noteTitles.contains(noteName2));
+        assert (!noteTitles.contains(noteName4));
     }
 
 
@@ -300,6 +335,10 @@ public class NotesTest {
 
 
     // HELPERS
+
+    private List<WebElement> getNotesInNotesList() {
+        return (List<WebElement>) new ArrayList<WebElement>(driver.findElementsByAccessibilityId("Item title"));
+    }
 
     private void navigateUp() {
         driver.findElementByAccessibilityId("Navigate up").click();
