@@ -2,6 +2,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -15,10 +16,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 
 public class NotesTest {
@@ -27,17 +29,20 @@ public class NotesTest {
     private AppiumDriver<WebElement> driver;
     WebDriverWait driverWait;
     private String taskListName = "a random task list";
-    private String noteName = "prepare food";
+    private String noteName1 = "prepare food";
+    private String noteName2 = "take dogs out";
+    private String noteName3 = "water plants";
+    private String noteName4 = "sleep";
 
     @Before
     public void setUp() throws Exception{
         File classpathRoot = new File(System.getProperty("user.dir"));
         System.out.println(classpathRoot.getAbsolutePath());
-        //System.out.println("");
+        //System.out.println("");d
         //File appDir = new File(classpathRoot, "");
         //File appDir = new File(classpathRoot, "");
         //System.out.println(appDir.getAbsolutePath());
-        File app = new File(classpathRoot, "nononsensenotes-debug-4.apk");
+        File app = new File(classpathRoot, "nononsensenotes-debug.apk");
         System.out.println(app.getAbsolutePath());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -91,17 +96,17 @@ public class NotesTest {
     public void testAddNewNoteShouldShowNameInNotesScreen(){
         swipeDrawerclosed();
 
-        createNewNoteWithName(noteName);
-        driver.findElementByAccessibilityId("Navigate up").click();
+        createNewNoteWithName(noteName1);
+        navigateUp();
 
 //        WebDriverWait driverWait = new WebDriverWait(driver, 50);
 
         driverWait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                        By.xpath("//*[@text='"+ noteName + "']")
+                        By.xpath("//*[@text='"+ noteName1 + "']")
                 )
         );
-        assertNotNull(driver.findElement(By.xpath("//*[@text='"+ noteName + "']")));
+        assertNotNull(driver.findElement(By.xpath("//*[@text='"+ noteName1 + "']")));
     }
 
 
@@ -110,7 +115,7 @@ public class NotesTest {
 
         swipeDrawerclosed();
 
-        createNewNoteWithName(noteName);
+        createNewNoteWithName(noteName1);
 
         driver.hideKeyboard();
 
@@ -123,8 +128,8 @@ public class NotesTest {
 
         );
 
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
-        driver.findElementByAccessibilityId("Navigate up").click();
+        clickDonebutton();
+        navigateUp();
     }
 
     @Test
@@ -132,23 +137,128 @@ public class NotesTest {
 
         swipeDrawerclosed();
 
-        createNewNoteWithName(noteName);
+        createNewNoteWithName(noteName1);
         driver.hideKeyboard();
 
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
-        driver.findElementByAccessibilityId("Navigate up").click();
+        clickDonebutton();
+        navigateUp();
 
         driverWait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                        By.xpath("//*[@text='"+ noteName + "']")
+                        By.xpath("//*[@text='"+ noteName1 + "']")
                 )
         );
 
         driver.findElement(By.id("com.nononsenseapps.notepad:id/date"));
     }
 
+
+
     @Test
+    public void testCreateNoteAndDeleteIt(){
+
+        swipeDrawerclosed();
+
+        createNewNoteWithName(noteName1);
+        navigateUp();
+
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='"+ noteName1 + "']")
+                )
+        );
+
+        driver.findElement(By.xpath("//*[@text='"+ noteName1 + "']")).click();
+
+        driver.findElementByAccessibilityId("Delete").click();
+        driver.findElement(By.xpath("//*[@text='OK']")).click();
+
+        List<WebElement> elements = driver.findElements(By.xpath("//*[@text='"+ noteName1 + "']"));
+
+        assertEquals(0, elements.size());
+
+    }
+
+
+
+    @Test
+    public void testTaskListAddNoteToIt(){
+
+//        driver.findElement(By.id("android:id/text1")).click();
+        driver.findElement(By.xpath("//*[@text='Create new']")).click();
+        driver.findElement(By.xpath("//*[@text='Title']")).sendKeys(taskListName);
+        driver.findElement(By.xpath("//*[@text='OK']")).click();
+
+        createNewNoteWithName(noteName1);
+        navigateUp();
+
+        List<WebElement> elements = driver.findElements(By.xpath("//*[@text='"+ noteName1 +"']"));
+        assertEquals(1, elements.size());
+    }
+
+    @Test
+    public void testAddNotesOrderByDueDate(){
+
+        swipeDrawerclosed();
+
+        String[] expectedNoteOrder = {noteName3, noteName4, noteName2, noteName1};
+
+
+        createNewNoteWithName(noteName1);
+        driver.findElement(By.xpath("//*[@text='Due date']")).click();
+        /*  not the best solution, here we find the first View in the hierarchy (which should be the current month)
+            and select consecutive days for different notes as due date. The method works, somewhat but
+            does not seem to work entirely correctly (index 0 doesn't pick the first day of the month, for example)
+         */
+        driver.findElement(By.xpath("//android.view.View[@index='21']")).click();
+        clickDonebutton();
+        navigateUp();
+
+
+        createNewNoteWithName(noteName2);
+        driver.findElement(By.xpath("//*[@text='Due date']")).click();
+        driver.findElement(By.xpath("//android.view.View[@index='15']")).click();
+        clickDonebutton();
+        navigateUp();
+
+        createNewNoteWithName(noteName3);
+        driver.findElement(By.xpath("//*[@text='Due date']")).click();
+        driver.findElement(By.xpath("//android.view.View[@index='3']")).click();
+        clickDonebutton();
+        navigateUp();
+
+        createNewNoteWithName(noteName4);
+        driver.findElement(By.xpath("//*[@text='Due date']")).click();
+        driver.findElement(By.xpath("//android.view.View[@index='8']")).click();
+        clickDonebutton();
+        navigateUp();
+
+
+        //order by due date
+        driver.findElementByAccessibilityId("Sorting").click();
+        driver.findElement(By.xpath("//*[@text='Order by due date']")).click();
+
+        //rely on the fact that in a recyclerview the elements always have the same ID
+        List<WebElement> elements = new ArrayList<>(driver.findElementsByAccessibilityId("Item title"));
+
+        assertEquals(4, elements.size());
+        for(int i = 0; i < elements.size(); i++){
+            assertEquals(expectedNoteOrder[i], elements.get(i).getText());
+        }
+
+    }
+
+    //todo finish this
+    @Test
+    public void testCreateTaskListAndDeleteIt(){
+
+        driver.findElement(By.xpath("//*[@text='Create new']")).click();
+    }
+
+
+    @Test
+    @Ignore
     public void numberUno(){
 
         WebElement element = driver.findElement(By.xpath("//*[@text='Settings']"));
@@ -159,12 +269,28 @@ public class NotesTest {
     }
 
 
+
+
+
+
+    // HELPERS
+
+    private void navigateUp() {
+        driver.findElementByAccessibilityId("Navigate up").click();
+    }
+
+    private void clickDonebutton() {
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
+    }
+
     private void createNewNoteWithName(String name){
         driver.findElementByAccessibilityId("Floating action button").click();
 
         WebElement textView = driver.findElement(By.xpath("//*[@text='Note']"));
         textView.sendKeys(name);
     }
+
+
 
     private void swipeDrawerclosed(){
         WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
