@@ -1,5 +1,6 @@
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Ignore;
@@ -249,11 +250,36 @@ public class NotesTest {
 
     }
 
-    //todo finish this
     @Test
     public void testCreateTaskListAndDeleteIt(){
 
         driver.findElement(By.xpath("//*[@text='Create new']")).click();
+        driver.findElementByClassName("android.widget.EditText").sendKeys(taskListName);
+        driver.findElement(By.xpath("//*[@text='OK']")).click();
+
+        driver.findElementByAccessibilityId("Open navigation drawer").click();
+
+        //delete the element
+
+//        driver.findElement(By.xpath("//*[@text='"+ taskListName + "']")).click();
+
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='"+ taskListName + "']")
+                )
+        );
+        WebElement taskList = driver.findElement(By.xpath("//*[@text='"+ taskListName + "']"));
+        TouchAction longPress = new TouchAction(driver);
+        longPress.longPress(taskList, 1000).release().perform();
+
+
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/deleteButton")).click();
+        driver.findElement(By.xpath("//*[@text='OK']")).click();
+
+        //get the list of elements with the name that is used to create the element, should be 0
+        List<WebElement> elements = driver.findElements(By.xpath("//*[@text='"+ taskListName + "']"));
+        assertEquals(0, elements.size());
+
     }
 
 
