@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -34,6 +33,14 @@ public class NotesTest {
     private String noteName2 = "take dogs out";
     private String noteName3 = "water plants";
     private String noteName4 = "sleep";
+    private String[] noteNameList = {noteName1, noteName2, noteName3, noteName4,
+                                    "go for a jog", "do some work", "play with the dog",
+                                    "work out", "do weird stuff", "read a book", "drink water",
+                                    "write a book", "proofread the book", "publish the book",
+                                    "ponder life", "build a house", "repair the house", "call contractor",
+                                    "write another book", "scrap the book project", "start a blog",
+                                    "  ", "     "};
+
 
     @Before
     public void setUp() throws Exception{
@@ -54,7 +61,6 @@ public class NotesTest {
         capabilities.setCapability("appActivity", ".activities.ActivityList");
 
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-
         driverWait = new WebDriverWait(driver, 50);
     }
 
@@ -66,31 +72,18 @@ public class NotesTest {
             driver.quit();
     }
 
-    /**
-     * Use contains parameter in xpath search give incomplete search string
-     */
+
     @Test
     public void testAddTaskListCheckItIsAddedToDrawer(){
 
-        WebElement element = driver.findElement(By.xpath("//android.widget.TextView[contains(@text, 'Create')]"));
-        element.click();
-        element = driver.findElementByClassName("android.widget.EditText");
-        element.sendKeys(taskListName);
+        driver.findElement(By.xpath("//android.widget.TextView[contains(@text, 'Create')]")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/titleField")).sendKeys(taskListName);
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/dialog_yes")).click();
 
-        WebElement okButton = driver.findElement(By.xpath("//*[@text='OK']"));
-        okButton.click();
+        driver.findElementByAccessibilityId("Open navigation drawer").click();
 
-        WebElement hamburgerButton = driver.findElementByAccessibilityId("Open navigation drawer");
-        hamburgerButton.click();
-
-//        List<WebElement> textViews = driver.findElementsByClassName("android.widget.TextView");
-//
-//        for(int i = 0; i < textViews.size(); i++){
-//            System.out.println(textViews.get(i).getText());
-//        }
-
-        driver.findElement(By.xpath("//android.widget.TextView[@text='" + taskListName + "']"));
-
+        driver.findElement
+                (By.xpath("//*[@text='" + taskListName + "']"));
     }
 
     @Test
@@ -182,11 +175,10 @@ public class NotesTest {
     }
 
 
-
+    //todo open the drawer and check that the number of notes in the list is 1
     @Test
     public void testTaskListAddNoteToIt(){
 
-//        driver.findElement(By.id("android:id/text1")).click();
         driver.findElement(By.xpath("//*[@text='Create new']")).click();
         driver.findElement(By.xpath("//*[@text='Title']")).sendKeys(taskListName);
         driver.findElement(By.xpath("//*[@text='OK']")).click();
@@ -251,8 +243,6 @@ public class NotesTest {
 
     }
 
-
-
     @Test
     public void testCreateTaskListAndDeleteIt(){
 
@@ -284,20 +274,22 @@ public class NotesTest {
 
     @Test
     public void testCompletedTasksAreCleared(){
-
         swipeDrawerclosed();
 
-        createNewNoteWithName(noteName1);
-        navigateUp();
+        String [] noteNames = {noteName1, noteName2, noteName3, noteName4};
+        createNotes(noteNames);
 
-        createNewNoteWithName(noteName2);
-        navigateUp();
-
-        createNewNoteWithName(noteName3);
-        navigateUp();
-
-        createNewNoteWithName(noteName4);
-        navigateUp();
+//        createNewNoteWithName(noteName1);
+//        navigateUp();
+//
+//        createNewNoteWithName(noteName2);
+//        navigateUp();
+//
+//        createNewNoteWithName(noteName3);
+//        navigateUp();
+//
+//        createNewNoteWithName(noteName4);
+//        navigateUp();
 
         List<WebElement> checkBoxes =  driver.findElements(By.id("com.nononsenseapps.notepad:id/checkbox"));
         checkBoxes.get(1).click();
@@ -313,8 +305,22 @@ public class NotesTest {
             noteTitles.add(remainingTasks.get(i).getText());
         }
 
-        assert(!noteTitles.contains(noteName2));
-        assert (!noteTitles.contains(noteName4));
+        assert(!noteTitles.contains(noteNames[1]));
+        assert (!noteTitles.contains(noteNames[3]));
+    }
+
+    @Test
+    public void addBigNumberOfNotesScrollDownAndDeleteOne(){
+
+        swipeDrawerclosed();
+        createNotes(noteNameList);
+
+        int lastIndexInNoteNames = noteNameList.length-1;
+        WebElement element = driver.findElement
+                (By.xpath("//*[@text='"+ noteNameList[lastIndexInNoteNames] + "']"));
+
+        System.out.println(element.getText());
+
     }
 
 
@@ -335,6 +341,13 @@ public class NotesTest {
 
 
     // HELPERS
+
+    private void createNotes(String[] noteNames){
+        for (int i = 0; i < noteNames.length; i++){
+            createNewNoteWithName(noteNames[i]);
+            navigateUp();
+        }
+    }
 
     private List<WebElement> getNotesInNotesList() {
         return (List<WebElement>) new ArrayList<WebElement>(driver.findElementsByAccessibilityId("Item title"));
