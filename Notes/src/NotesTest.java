@@ -59,6 +59,8 @@ public class NotesTest {
         capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("appPackage", "com.nononsenseapps.notepad");
         capabilities.setCapability("appActivity", ".activities.ActivityList");
+//        capabilities.setCapability("fullReset", false);
+//        capabilities.setCapability("noReset", false);
 
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         driverWait = new WebDriverWait(driver, 50);
@@ -152,8 +154,14 @@ public class NotesTest {
     @Test
     public void testCreateNoteAndDeleteIt(){
 
-        swipeDrawerclosed();
+        //first wait that the app is actually started
+        driverWait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("com.nononsenseapps.notepad:id/drawer_layout")
+                )
+        );
 
+        swipeDrawerclosed();
         createNewNoteWithName(noteName1);
         navigateUp();
 
@@ -337,9 +345,6 @@ public class NotesTest {
 
 
 
-
-
-
     // HELPERS
 
     private void createNotes(String[] noteNames){
@@ -354,7 +359,8 @@ public class NotesTest {
     }
 
     private void navigateUp() {
-        driver.findElementByAccessibilityId("Navigate up").click();
+//        driver.findElementByAccessibilityId("Navigate up").click();
+        driver.findElement(By.id())
     }
 
     private void clickDonebutton() {
@@ -362,10 +368,13 @@ public class NotesTest {
     }
 
     private void createNewNoteWithName(String name){
-        driver.findElementByAccessibilityId("Floating action button").click();
+//        driver.findElementByAccessibilityId("Floating action button").click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/fab")).click();
+        //driver.findElement(By.id("com.nononsenseapps.notepad:id/deleteButton")).click();
 
-        WebElement textView = driver.findElement(By.xpath("//*[@text='Note']"));
-        textView.sendKeys(name);
+//        WebElement textView = driver.findElement(By.xpath("//*[@text='Note']"));
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/taskText")).sendKeys(name);
+//        textView.sendKeys(name);
     }
 
 
