@@ -46,10 +46,6 @@ public class NotesTest {
     public void setUp() throws Exception{
         File classpathRoot = new File(System.getProperty("user.dir"));
         System.out.println(classpathRoot.getAbsolutePath());
-        //System.out.println("");d
-        //File appDir = new File(classpathRoot, "");
-        //File appDir = new File(classpathRoot, "");
-        //System.out.println(appDir.getAbsolutePath());
         File app = new File(classpathRoot, "nononsensenotes-debug.apk");
         System.out.println(app.getAbsolutePath());
 
@@ -59,6 +55,8 @@ public class NotesTest {
         capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("appPackage", "com.nononsenseapps.notepad");
         capabilities.setCapability("appActivity", ".activities.ActivityList");
+
+        //commands to shut down the app and clear app data between tests
 //        capabilities.setCapability("fullReset", false);
 //        capabilities.setCapability("noReset", false);
 
@@ -90,7 +88,7 @@ public class NotesTest {
 
     @Test
     public void testAddNewNoteShouldShowNameInNotesScreen(){
-        swipeDrawerclosed();
+        closeDrawer();
 
         createNewNoteWithName(noteName1);
         navigateUp();
@@ -109,7 +107,7 @@ public class NotesTest {
     @Test
     public void testAddNewNoteWithReminderDateAndTime(){
 
-        swipeDrawerclosed();
+        closeDrawer();
 
         createNewNoteWithName(noteName1);
 
@@ -131,7 +129,7 @@ public class NotesTest {
     @Test
     public void testAddNewNoteWithDueDateCheckDateIsVisible(){
 
-        swipeDrawerclosed();
+        closeDrawer();
 
         createNewNoteWithName(noteName1);
         driver.hideKeyboard();
@@ -161,7 +159,7 @@ public class NotesTest {
                 )
         );
 
-        swipeDrawerclosed();
+        closeDrawer();
         createNewNoteWithName(noteName1);
         navigateUp();
 
@@ -202,7 +200,7 @@ public class NotesTest {
     @Test
     public void testAddNotesOrderByDueDate(){
 
-        swipeDrawerclosed();
+        closeDrawer();
 
         String[] expectedNoteOrder = {noteName3, noteName4, noteName2, noteName1};
 
@@ -238,7 +236,8 @@ public class NotesTest {
 
 
         //order by due date
-        driver.findElementByAccessibilityId("Sorting").click();
+//        driver.findElementByAccessibilityId("Sorting").click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_sort"));
         driver.findElement(By.xpath("//*[@text='Order by due date']")).click();
 
         //rely on the fact that in a recyclerview the elements always have the same ID
@@ -282,7 +281,7 @@ public class NotesTest {
 
     @Test
     public void testCompletedTasksAreCleared(){
-        swipeDrawerclosed();
+        closeDrawer();
 
         String [] noteNames = {noteName1, noteName2, noteName3, noteName4};
         createNotes(noteNames);
@@ -320,7 +319,7 @@ public class NotesTest {
     @Test
     public void addBigNumberOfNotesScrollDownAndDeleteOne(){
 
-        swipeDrawerclosed();
+        closeDrawer();
         createNotes(noteNameList);
 
         int lastIndexInNoteNames = noteNameList.length-1;
@@ -359,8 +358,8 @@ public class NotesTest {
     }
 
     private void navigateUp() {
-//        driver.findElementByAccessibilityId("Navigate up").click();
-        driver.findElement(By.id())
+        driver.findElementByAccessibilityId("Navigate up").click();
+
     }
 
     private void clickDonebutton() {
@@ -368,29 +367,29 @@ public class NotesTest {
     }
 
     private void createNewNoteWithName(String name){
-//        driver.findElementByAccessibilityId("Floating action button").click();
         driver.findElement(By.id("com.nononsenseapps.notepad:id/fab")).click();
-        //driver.findElement(By.id("com.nononsenseapps.notepad:id/deleteButton")).click();
-
-//        WebElement textView = driver.findElement(By.xpath("//*[@text='Note']"));
         driver.findElement(By.id("com.nononsenseapps.notepad:id/taskText")).sendKeys(name);
-//        textView.sendKeys(name);
     }
 
 
 
-    private void swipeDrawerclosed(){
+    private void closeDrawer(){
         WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
-        Point point = getPointToRightOfDrawer(drawerLayout);
 
+        //find the middle point of the drawer layout
+        Dimension dimension = drawerLayout.getSize();
+        Point point = new Point(dimension.getWidth()/2, dimension.getHeight()/2);
+
+        //swipe from the middle to left edge to close drawer
         driver.swipe(point.getX(), point.getY(), 1, point.getY(), 300);
     }
 
-    private Point getPointToRightOfDrawer(WebElement element){
-
-        Dimension dimension = element.getSize();
-        //x, y
-        return new Point(dimension.getWidth()/2, dimension.getHeight()/2);
-    }
+//
+//    private Point getPointToRightOfDrawer(WebElement element){
+//
+//        Dimension dimension = element.getSize();
+//        //x, y
+//        return new Point(dimension.getWidth()/2, dimension.getHeight()/2);
+//    }
 
 }

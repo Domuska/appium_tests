@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee88922f-9a61-44e5-ab60-26ce43b45fc4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NotesFaultyTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NotesTest.java" afterPath="$PROJECT_DIR$/src/NotesTest.java" />
     </list>
@@ -25,11 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="NotesTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NotesTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="362" column="35" selection-start-line="362" selection-start-column="35" selection-end-line="362" selection-end-column="35" />
+            <state relative-caret-position="-700">
+              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotesFaultyTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,6 +71,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/NotesTest.java" />
+        <option value="$PROJECT_DIR$/src/NotesFaultyTests.java" />
       </list>
     </option>
   </component>
@@ -99,11 +113,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -133,6 +146,7 @@
         </subPane>
         <subPane subId="Tests" />
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -147,28 +161,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.NotesTest.testCreateNoteAndDeleteIt">
-    <configuration default="false" name="NotesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NotesFaultyTests.testSearchForElementWithAmbiguousIdentifier">
     <configuration default="false" name="NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
@@ -190,14 +183,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.testTaskListAddNoteToIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesFaultyTests.testAddNewNoteSearchForFaultyNoteName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testTaskListAddNoteToIt" />
+      <option name="MAIN_CLASS_NAME" value="NotesFaultyTests" />
+      <option name="METHOD_NAME" value="testAddNewNoteSearchForFaultyNoteName" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -211,14 +204,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.testAddTaskListCheckItIsAddedToDrawer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesFaultyTests.testSearchForElementWithTextShouldFailOnView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testAddTaskListCheckItIsAddedToDrawer" />
+      <option name="MAIN_CLASS_NAME" value="NotesFaultyTests" />
+      <option name="METHOD_NAME" value="testSearchForElementWithTextShouldFailOnView" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -232,14 +225,35 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.testCreateNoteAndDeleteIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesFaultyTests.testSearchForElementWithFaultyID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testCreateNoteAndDeleteIt" />
+      <option name="MAIN_CLASS_NAME" value="NotesFaultyTests" />
+      <option name="METHOD_NAME" value="testSearchForElementWithFaultyID" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesFaultyTests.testSearchForElementWithAmbiguousIdentifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesFaultyTests" />
+      <option name="METHOD_NAME" value="testSearchForElementWithAmbiguousIdentifier" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -488,18 +502,18 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testTaskListAddNoteToIt" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListCheckItIsAddedToDrawer" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testAddNewNoteSearchForFaultyNoteName" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testSearchForElementWithTextShouldFailOnView" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testSearchForElementWithFaultyID" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testSearchForElementWithAmbiguousIdentifier" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListCheckItIsAddedToDrawer" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testTaskListAddNoteToIt" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testSearchForElementWithAmbiguousIdentifier" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testSearchForElementWithFaultyID" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testSearchForElementWithTextShouldFailOnView" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesFaultyTests.testAddNewNoteSearchForFaultyNoteName" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
       </list>
     </recent_temporary>
@@ -543,26 +557,26 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotesTest_testAddTaskListCheckItIsAddedToDrawer - 2016.06.14 at 13h 27m 52s.xml">
-      <configuration name="NotesTest.testAddTaskListCheckItIsAddedToDrawer" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testAddNewNoteSearchForFaultyNoteName - 2016.06.16 at 13h 41m 47s.xml">
+      <configuration name="NotesFaultyTests.testAddNewNoteSearchForFaultyNoteName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 21m 45s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testAddNewNoteSearchForFaultyNoteName - 2016.06.16 at 13h 42m 40s.xml">
+      <configuration name="NotesFaultyTests.testAddNewNoteSearchForFaultyNoteName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 23m 21s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testAddNewNoteSearchForFaultyNoteName - 2016.06.16 at 13h 49m 28s.xml">
+      <configuration name="NotesFaultyTests.testAddNewNoteSearchForFaultyNoteName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 24m 19s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testSearchForElementWithAmbiguousIdentifier - 2016.06.16 at 13h 56m 21s.xml">
+      <configuration name="NotesFaultyTests.testSearchForElementWithAmbiguousIdentifier" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 24m 49s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testSearchForElementWithAmbiguousIdentifier - 2016.06.16 at 13h 57m 00s.xml">
+      <configuration name="NotesFaultyTests.testSearchForElementWithAmbiguousIdentifier" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 25m 23s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testSearchForElementWithFaultyID - 2016.06.16 at 13h 54m 23s.xml">
+      <configuration name="NotesFaultyTests.testSearchForElementWithFaultyID" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 25m 53s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesFaultyTests_testSearchForElementWithTextShouldFailOnView - 2016.06.16 at 13h 52m 47s.xml">
+      <configuration name="NotesFaultyTests.testSearchForElementWithTextShouldFailOnView" configurationId="JUnit" />
     </history-entry>
     <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.14 at 13h 26m 25s.xml">
       <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
@@ -740,8 +754,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="362" column="35" selection-start-line="362" selection-start-column="35" selection-end-line="362" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-700">
+          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
