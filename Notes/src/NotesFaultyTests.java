@@ -26,6 +26,7 @@ public class NotesFaultyTests {
     WebDriverWait driverWait;
     private String taskListName = "a random task list";
     private String noteName1 = "prepare food";
+    private String createNewText = "Create new";
 
     @Before
     public void setUp() throws Exception{
@@ -64,7 +65,7 @@ public class NotesFaultyTests {
 
         driver.findElement(By.xpath("//*[@text='" + noteName1 + "asdf" +"']"));
 
-        //couple more faulty commands:
+        //couple more faulty commands with syntax errors:
 //        driver.findElement(By.xpath("//*[@text=" + noteName1+ "]"));
 //        driver.findElement(By.xpath("//*[text='" + noteName1+ "']"));
 
@@ -73,6 +74,15 @@ public class NotesFaultyTests {
 
     @Test
     public void testSearchForElementWithTextShouldFailOnView(){
+
+        closeDrawer();
+        driver.findElement(By.xpath(createNewText)).click();
+        assertFalse("should have failed before this", true);
+    }
+
+
+    @Test
+    public void testSearchForElementWithIDShouldFailOnView(){
         closeDrawer();
         driver.findElement(By.id("com.nononsenseapps.notepad:id/fab")).click();
         driver.findElement(By.id("com.nononsenseapps.notepad:id/fab")).click();
