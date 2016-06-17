@@ -28,6 +28,7 @@ public class NotesTest {
 
     private AppiumDriver<WebElement> driver;
     WebDriverWait driverWait;
+    private final String TASK_LIST_TITLE = "Notes";
     private String taskListName = "a random task list";
     private String noteName1 = "prepare food";
     private String noteName2 = "take dogs out";
@@ -61,7 +62,7 @@ public class NotesTest {
 //        capabilities.setCapability("noReset", false);
 
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        driverWait = new WebDriverWait(driver, 50);
+        driverWait = new WebDriverWait(driver, 20);
     }
 
 
@@ -84,47 +85,36 @@ public class NotesTest {
 
         driver.findElement
                 (By.xpath("//*[@text='" + taskListName + "']"));
+
+        //should modify this test so that we check the visibility of the element
+//        driverWait.until(ExpectedConditions.visibilityOfElementLocated(
+//                assertVisibleText(taskListName)
+//        ));
+
     }
+
+
+
 
     @Test
     public void testAddNewNoteShouldShowNameInNotesScreen(){
-        closeDrawer();
 
+        closeDrawer();
         createNewNoteWithName(noteName1);
         navigateUp();
 
-//        WebDriverWait driverWait = new WebDriverWait(driver, 50);
 
         driverWait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(
                         By.xpath("//*[@text='"+ noteName1 + "']")
                 )
         );
-        assertNotNull(driver.findElement(By.xpath("//*[@text='"+ noteName1 + "']")));
+
+        //assert the element is visible
+        assertVisibleText(noteName1);
+
     }
 
-
-    @Test
-    public void testAddNewNoteWithReminderDateAndTime(){
-
-        closeDrawer();
-
-        createNewNoteWithName(noteName1);
-
-        driver.hideKeyboard();
-
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationAdd")).click();
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationDate")).click();
-
-        driverWait.until(
-                ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                By.xpath("//*[@text='Done']"))
-
-        );
-
-        clickDonebutton();
-        navigateUp();
-    }
 
     @Test
     public void testAddNewNoteWithDueDateCheckDateIsVisible(){
@@ -134,8 +124,8 @@ public class NotesTest {
         createNewNoteWithName(noteName1);
         driver.hideKeyboard();
 
-        driver.findElement(By.xpath("//*[@text='Due date']")).click();
-        clickDonebutton();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/dueDateBox")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done")).click();
         navigateUp();
 
         driverWait.until(
@@ -144,6 +134,7 @@ public class NotesTest {
                 )
         );
 
+        //should find the element even if its' visibility is set to invisible
         driver.findElement(By.id("com.nononsenseapps.notepad:id/date"));
     }
 
@@ -171,23 +162,32 @@ public class NotesTest {
 
         driver.findElement(By.xpath("//*[@text='"+ noteName1 + "']")).click();
 
-        driver.findElementByAccessibilityId("Delete").click();
-        driver.findElement(By.xpath("//*[@text='OK']")).click();
+//        driver.findElementByAccessibilityId("Delete").click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_delete")).click();
+//        driver.findElement(By.xpath("//*[@text='OK']")).click();
+        driver.findElement(By.id("android:id/button1")).click();
+
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='"+ TASK_LIST_TITLE + "']")
+                )
+        );
 
         List<WebElement> elements = driver.findElements(By.xpath("//*[@text='"+ noteName1 + "']"));
-
         assertEquals(0, elements.size());
-
     }
 
 
-    //todo open the drawer and check that the number of notes in the list is 1
     @Test
     public void testTaskListAddNoteToIt(){
 
         driver.findElement(By.xpath("//*[@text='Create new']")).click();
-        driver.findElement(By.xpath("//*[@text='Title']")).sendKeys(taskListName);
-        driver.findElement(By.xpath("//*[@text='OK']")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/titleField")).sendKeys(taskListName);
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/dialog_yes")).click();
+
+        //open the note that was created
+        openDrawer();
+        driver.findElement(By.xpath("//*[@text='"+ taskListName +"']")).click();
 
         createNewNoteWithName(noteName1);
         navigateUp();
@@ -197,13 +197,13 @@ public class NotesTest {
     }
 
 
+    //todo should be ignored? or not?
     @Test
     public void testAddNotesOrderByDueDate(){
 
         closeDrawer();
 
         String[] expectedNoteOrder = {noteName3, noteName4, noteName2, noteName1};
-
 
         createNewNoteWithName(noteName1);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
@@ -212,31 +212,30 @@ public class NotesTest {
             does not seem to work entirely correctly (index 0 doesn't pick the first day of the month, for example)
          */
         driver.findElement(By.xpath("//android.view.View[@index='21']")).click();
-        clickDonebutton();
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
         navigateUp();
 
 
         createNewNoteWithName(noteName2);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
         driver.findElement(By.xpath("//android.view.View[@index='15']")).click();
-        clickDonebutton();
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
         navigateUp();
 
         createNewNoteWithName(noteName3);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
         driver.findElement(By.xpath("//android.view.View[@index='3']")).click();
-        clickDonebutton();
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
         navigateUp();
 
         createNewNoteWithName(noteName4);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
         driver.findElement(By.xpath("//android.view.View[@index='8']")).click();
-        clickDonebutton();
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
         navigateUp();
 
 
         //order by due date
-//        driver.findElementByAccessibilityId("Sorting").click();
         driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_sort"));
         driver.findElement(By.xpath("//*[@text='Order by due date']")).click();
 
@@ -250,6 +249,7 @@ public class NotesTest {
 
     }
 
+    //todo konsistenssi tsekattu tähän asti
     @Test
     public void testCreateTaskListAndDeleteIt(){
 
@@ -342,9 +342,45 @@ public class NotesTest {
         assertEquals("Current theme", list.get(2).getText());
     }
 
+    @Test
+    @Ignore
+    public void testAddNewNoteWithReminderDateAndTime(){
+
+        closeDrawer();
+
+        createNewNoteWithName(noteName1);
+
+        driver.hideKeyboard();
+
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationAdd")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationDate")).click();
+
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='Done']"))
+
+        );
+
+        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        navigateUp();
+    }
+
 
 
     // HELPERS
+
+    private By assertVisibleText(String text) {
+        return By.xpath("//UIAStaticText[@visible=\"true\" and (@name=\"" + text
+                + "\" or @hint=\"" + text + "\" or @label=\"" + text
+                + "\" or @value=\"" + text + "\""
+                + " or @text=\"" + text + "\"" + ")]");
+    }
+
+//    private By assertVisibleViewWithId(){
+//        return By.id()
+//    }
+
+
 
     private void createNotes(String[] noteNames){
         for (int i = 0; i < noteNames.length; i++){
@@ -360,10 +396,6 @@ public class NotesTest {
     private void navigateUp() {
         driver.findElementByAccessibilityId("Navigate up").click();
 
-    }
-
-    private void clickDonebutton() {
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
     }
 
     private void createNewNoteWithName(String name){
@@ -382,6 +414,11 @@ public class NotesTest {
 
         //swipe from the middle to left edge to close drawer
         driver.swipe(point.getX(), point.getY(), 1, point.getY(), 300);
+    }
+
+    private void openDrawer() {
+
+        driver.findElementByAccessibilityId("Open navigation drawer").click();
     }
 
 //
