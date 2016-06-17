@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee88922f-9a61-44e5-ab60-26ce43b45fc4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nononsensenotes-debug.apk" afterPath="$PROJECT_DIR$/nononsensenotes-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NotesTest.java" afterPath="$PROJECT_DIR$/src/NotesTest.java" />
     </list>
@@ -29,8 +28,8 @@
       <file leaf-file-name="NotesTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
+            <state relative-caret-position="276">
+              <caret line="95" column="57" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -191,91 +190,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.NotesTest.testCreateNoteAndDeleteIt">
-    <configuration default="false" name="NotesTest.testAddTaskListCheckItIsAddedToDrawer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testAddTaskListCheckItIsAddedToDrawer" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NotesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testAddNewNoteShouldShowNameInNotesScreen" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Notes" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testAddNewNoteWithDueDateCheckDateIsVisible" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne">
     <configuration default="false" name="NotesTest.testCreateNoteAndDeleteIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
@@ -284,6 +199,90 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
       <option name="METHOD_NAME" value="testCreateNoteAndDeleteIt" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.testCreateTaskListAndDeleteIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="testCreateTaskListAndDeleteIt" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="addBigNumberOfNotesScrollDownAndDeleteOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="testAddBigNumberOfNotesScrollDownAndDeleteOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NotesTest.testCompletedTasksAreCleared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Notes" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotesTest" />
+      <option name="METHOD_NAME" value="testCompletedTasksAreCleared" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -532,19 +531,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListCheckItIsAddedToDrawer" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateTaskListAndDeleteIt" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testCompletedTasksAreCleared" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteShouldShowNameInNotesScreen" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListCheckItIsAddedToDrawer" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testCompletedTasksAreCleared" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateTaskListAndDeleteIt" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
       </list>
     </recent_temporary>
   </component>
@@ -587,39 +586,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotesTest_testAddNewNoteShouldShowNameInNotesScreen - 2016.06.17 at 10h 24m 08s.xml">
-      <configuration name="NotesTest.testAddNewNoteShouldShowNameInNotesScreen" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 04m 19s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteWithDueDateCheckDateIsVisible - 2016.06.17 at 10h 41m 52s.xml">
-      <configuration name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 04m 28s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteWithDueDateCheckDateIsVisible - 2016.06.17 at 10h 47m 09s.xml">
-      <configuration name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 05m 07s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteWithDueDateCheckDateIsVisible - 2016.06.17 at 10h 47m 54s.xml">
-      <configuration name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 20m 23s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteWithDueDateCheckDateIsVisible - 2016.06.17 at 10h 54m 28s.xml">
-      <configuration name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 20m 40s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddNewNoteWithDueDateCheckDateIsVisible - 2016.06.17 at 10h 56m 23s.xml">
-      <configuration name="NotesTest.testAddNewNoteWithDueDateCheckDateIsVisible" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 24m 21s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddTaskListCheckItIsAddedToDrawer - 2016.06.17 at 10h 14m 35s.xml">
-      <configuration name="NotesTest.testAddTaskListCheckItIsAddedToDrawer" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 34m 33s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.17 at 11h 04m 13s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 35m 06s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.17 at 11h 04m 53s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 35m 42s.xml">
+      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCreateNoteAndDeleteIt - 2016.06.17 at 11h 05m 26s.xml">
-      <configuration name="NotesTest.testCreateNoteAndDeleteIt" configurationId="JUnit" />
+    <history-entry file="NotesTest_testCompletedTasksAreCleared - 2016.06.17 at 13h 13m 44s.xml">
+      <configuration name="NotesTest.testCompletedTasksAreCleared" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -629,7 +628,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52154195" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38208616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -862,8 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
+        <state relative-caret-position="276">
+          <caret line="95" column="57" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

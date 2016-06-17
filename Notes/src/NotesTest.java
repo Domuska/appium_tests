@@ -5,10 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -58,8 +55,10 @@ public class NotesTest {
         capabilities.setCapability("appActivity", ".activities.ActivityList");
 
         //commands to shut down the app and clear app data between tests
-//        capabilities.setCapability("fullReset", false);
+        capabilities.setCapability("fullReset", false);
 //        capabilities.setCapability("noReset", false);
+
+        capabilities.setCapability("noReset", true);
 
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         driverWait = new WebDriverWait(driver, 20);
@@ -92,9 +91,6 @@ public class NotesTest {
 //        ));
 
     }
-
-
-
 
     @Test
     public void testAddNewNoteShouldShowNameInNotesScreen(){
@@ -138,7 +134,10 @@ public class NotesTest {
         driver.findElement(By.id("com.nononsenseapps.notepad:id/date"));
     }
 
-
+//    @Test
+//    public void testAddNewNoteWithReminderDateAndTime(){
+//
+//    }
 
     @Test
     public void testCreateNoteAndDeleteIt(){
@@ -179,7 +178,7 @@ public class NotesTest {
 
 
     @Test
-    public void testTaskListAddNoteToIt(){
+    public void testAddNoteToTaskList(){
 
         driver.findElement(By.xpath("//*[@text='Create new']")).click();
         driver.findElement(By.id("com.nononsenseapps.notepad:id/titleField")).sendKeys(taskListName);
@@ -249,28 +248,32 @@ public class NotesTest {
 
     }
 
-    //todo konsistenssi tsekattu tähän asti
+
     @Test
     public void testCreateTaskListAndDeleteIt(){
 
+        //create the tasklist
         driver.findElement(By.xpath("//*[@text='Create new']")).click();
-        driver.findElementByClassName("android.widget.EditText").sendKeys(taskListName);
-        driver.findElement(By.xpath("//*[@text='OK']")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/titleField")).sendKeys(taskListName);
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/dialog_yes")).click();
 
-        driver.findElementByAccessibilityId("Open navigation drawer").click();
+        openDrawer();
 
-        //delete the element
+        //delete the tasklist
         driverWait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(
                         By.xpath("//*[@text='"+ taskListName + "']")
                 )
         );
+
+        //long press the element
         WebElement taskList = driver.findElement(By.xpath("//*[@text='"+ taskListName + "']"));
         TouchAction longPress = new TouchAction(driver);
         longPress.longPress(taskList, 2000).release().perform();
 
 
         driver.findElement(By.id("com.nononsenseapps.notepad:id/deleteButton")).click();
+
         driver.findElement(By.xpath("//*[@text='OK']")).click();
 
         //get the list of elements with the name that is used to create the element, should be 0
@@ -279,24 +282,13 @@ public class NotesTest {
 
     }
 
+
     @Test
     public void testCompletedTasksAreCleared(){
         closeDrawer();
 
         String [] noteNames = {noteName1, noteName2, noteName3, noteName4};
         createNotes(noteNames);
-
-//        createNewNoteWithName(noteName1);
-//        navigateUp();
-//
-//        createNewNoteWithName(noteName2);
-//        navigateUp();
-//
-//        createNewNoteWithName(noteName3);
-//        navigateUp();
-//
-//        createNewNoteWithName(noteName4);
-//        navigateUp();
 
         List<WebElement> checkBoxes =  driver.findElements(By.id("com.nononsenseapps.notepad:id/checkbox"));
         checkBoxes.get(1).click();
@@ -312,35 +304,38 @@ public class NotesTest {
             noteTitles.add(remainingTasks.get(i).getText());
         }
 
-        assert(!noteTitles.contains(noteNames[1]));
+        assert (!noteTitles.contains(noteNames[1]));
         assert (!noteTitles.contains(noteNames[3]));
     }
 
+    //note, this test will fail for now since there's an actual bug in the app
     @Test
-    public void addBigNumberOfNotesScrollDownAndDeleteOne(){
+    public void testAddBigNumberOfNotesScrollDownAndDeleteOne(){
 
         closeDrawer();
         createNotes(noteNameList);
 
-        int lastIndexInNoteNames = noteNameList.length-1;
-        WebElement element = driver.findElement
-                (By.xpath("//*[@text='"+ noteNameList[lastIndexInNoteNames] + "']"));
+        driver.scrollTo(noteNameList[0]);
 
-        System.out.println(element.getText());
+        driver.findElement(By.xpath("//*[@text='"+ noteNameList[0] + "']")).click();
+
+
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_delete")).click();
+        driver.findElement(By.id("android:id/button1")).click();
+
+        //todo is this really a good way to do this?
+        // there are no ways in Appium to assert that something is not visible
+        try{
+            driver.scrollTo(noteNameList[0]);
+        }
+        catch(NoSuchElementException e){
+            assertNotNull("There should always be an exception", e);
+        }
+
 
     }
 
 
-    @Test
-    @Ignore
-    public void numberUno(){
-
-        WebElement element = driver.findElement(By.xpath("//*[@text='Settings']"));
-        element.click();
-
-        List<WebElement> list = driver.findElementsByClassName("android.widget.TextView");
-        assertEquals("Current theme", list.get(2).getText());
-    }
 
     @Test
     @Ignore
@@ -367,6 +362,7 @@ public class NotesTest {
 
 
 
+
     // HELPERS
 
     private By assertVisibleText(String text) {
@@ -375,11 +371,6 @@ public class NotesTest {
                 + "\" or @value=\"" + text + "\""
                 + " or @text=\"" + text + "\"" + ")]");
     }
-
-//    private By assertVisibleViewWithId(){
-//        return By.id()
-//    }
-
 
 
     private void createNotes(String[] noteNames){
