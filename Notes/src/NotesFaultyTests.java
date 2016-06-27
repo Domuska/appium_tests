@@ -81,6 +81,7 @@ public class NotesFaultyTests {
     }
 
 
+    //search for element with valid ID but that should not be visible
     @Test
     public void testSearchForElementWithIDShouldFailOnView(){
         closeDrawer();
@@ -90,6 +91,7 @@ public class NotesFaultyTests {
         assertFalse("should have failed before this", true);
     }
 
+    //search for element with a faulty ID that is not available at all
     @Test
     public void testSearchForElementWithFaultyID(){
         closeDrawer();
@@ -97,6 +99,7 @@ public class NotesFaultyTests {
         assertFalse("should have failed before this", true);
     }
 
+    //search for element with identifier that matches multiple views
     @Test
     public void testSearchForElementWithAmbiguousIdentifier(){
 
