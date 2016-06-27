@@ -14,8 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.net.URL;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.*;
 
@@ -24,7 +27,7 @@ public class NotesTest {
 
 
     private AppiumDriver<WebElement> driver;
-    WebDriverWait driverWait;
+    private WebDriverWait driverWait;
     private final String TASK_LIST_TITLE = "Notes";
     private String taskListName = "a random task list";
     private String noteName1 = "prepare food";
@@ -38,6 +41,9 @@ public class NotesTest {
                                     "ponder life", "build a house", "repair the house", "call contractor",
                                     "write another book", "scrap the book project", "start a blog",
                                     "  ", "     "};
+    private String[] taskListNames = {"Lorem", "ipsum ", "dolor ", "sit ", "amet", "consectetur ",
+            "adipiscing ", "elit", "sed ", "do ", "eiusmod ", "tempor ", "incididunt ",
+            "ut ", "labore "};
 
 
     @Before
@@ -56,9 +62,7 @@ public class NotesTest {
 
         //commands to shut down the app and clear app data between tests
         capabilities.setCapability("fullReset", false);
-//        capabilities.setCapability("noReset", false);
-
-        capabilities.setCapability("noReset", true);
+        capabilities.setCapability("noReset", false);
 
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         driverWait = new WebDriverWait(driver, 20);
@@ -67,7 +71,6 @@ public class NotesTest {
 
     @After
     public void tearDown() throws Exception{
-
         if(driver != null)
             driver.quit();
     }
@@ -76,9 +79,7 @@ public class NotesTest {
     @Test
     public void testAddTaskListCheckItIsAddedToDrawer(){
 
-        driver.findElement(By.xpath("//android.widget.TextView[contains(@text, 'Create')]")).click();
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/titleField")).sendKeys(taskListName);
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/dialog_yes")).click();
+        createTaskList(taskListName);
 
         driver.findElementByAccessibilityId("Open navigation drawer").click();
 
@@ -91,6 +92,8 @@ public class NotesTest {
 //        ));
 
     }
+
+
 
     @Test
     public void testAddNewNoteShouldShowNameInNotesScreen(){
@@ -161,9 +164,7 @@ public class NotesTest {
 
         driver.findElement(By.xpath("//*[@text='"+ noteName1 + "']")).click();
 
-//        driver.findElementByAccessibilityId("Delete").click();
         driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_delete")).click();
-//        driver.findElement(By.xpath("//*[@text='OK']")).click();
         driver.findElement(By.id("android:id/button1")).click();
 
         driverWait.until(
@@ -195,47 +196,45 @@ public class NotesTest {
         assertEquals(1, elements.size());
     }
 
-
     //todo should be ignored? or not?
     @Test
     public void testAddNotesOrderByDueDate(){
 
         closeDrawer();
 
-        String[] expectedNoteOrder = {noteName3, noteName4, noteName2, noteName1};
+        String[] expectedNoteOrder = {noteName2, noteName1, noteName4, noteName3};
+
+        String day04 = "04" + getMonthAndYear();
+        String day05 = "05" + getMonthAndYear();
+        String day15 = "15" + getMonthAndYear();
+        String day23 = "23" + getMonthAndYear();
 
         createNewNoteWithName(noteName1);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
-        /*  not the best solution, here we find the first View in the hierarchy (which should be the current month)
-            and select consecutive days for different notes as due date. The method works, somewhat but
-            does not seem to work entirely correctly (index 0 doesn't pick the first day of the month, for example)
-         */
-        driver.findElement(By.xpath("//android.view.View[@index='21']")).click();
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        driver.findElementByAccessibilityId(day05).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done")).click();
         navigateUp();
-
 
         createNewNoteWithName(noteName2);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
-        driver.findElement(By.xpath("//android.view.View[@index='15']")).click();
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        driver.findElementByAccessibilityId(day04).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done")).click();
         navigateUp();
 
         createNewNoteWithName(noteName3);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
-        driver.findElement(By.xpath("//android.view.View[@index='3']")).click();
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        driver.findElementByAccessibilityId(day23).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done")).click();
         navigateUp();
 
         createNewNoteWithName(noteName4);
         driver.findElement(By.xpath("//*[@text='Due date']")).click();
-        driver.findElement(By.xpath("//android.view.View[@index='8']")).click();
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        driver.findElementByAccessibilityId(day15).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done")).click();
         navigateUp();
 
-
         //order by due date
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_sort"));
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/menu_sort")).click();
         driver.findElement(By.xpath("//*[@text='Order by due date']")).click();
 
         //rely on the fact that in a recyclerview the elements always have the same ID
@@ -312,6 +311,12 @@ public class NotesTest {
     @Test
     public void testAddBigNumberOfNotesScrollDownAndDeleteOne(){
 
+        driverWait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("com.nononsenseapps.notepad:id/drawer_layout")
+                )
+        );
+
         closeDrawer();
         createNotes(noteNameList);
 
@@ -335,32 +340,82 @@ public class NotesTest {
 
     }
 
-
-
     @Test
-    @Ignore
     public void testAddNewNoteWithReminderDateAndTime(){
 
         closeDrawer();
-
         createNewNoteWithName(noteName1);
-
         driver.hideKeyboard();
 
+        //add reminder
         driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationAdd")).click();
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationDate")).click();
 
+        //add date
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationDate")).click();
         driverWait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(
                         By.xpath("//*[@text='Done']"))
-
         );
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done")).click();
 
-        driver.findElement(By.xpath("//*[@text='Done']")).click();
+        //add time
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationTime")).click();
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='Done']"))
+        );
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/done_button")).click();
+
         navigateUp();
+
+        //check that the date field is visible
+        driver.findElement(By.xpath("//*[@text='" + noteName1 + "']")).click();
+        driver.hideKeyboard();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/notificationDate"));
     }
 
+    @Test
+    public void testAddTaskListAndRotateScreen(){
+        createTaskList(taskListName);
 
+        openDrawer();
+
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+        driver.rotate(ScreenOrientation.PORTRAIT);
+        driverWait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//*[@text='" + taskListName + "']"))
+        );
+    }
+
+    @Test
+    public void testAddNotesAndRotateScreen(){
+        String[] noteNames = {noteName1, noteName2, noteName3, noteName4};
+
+        closeDrawer();
+        createNotes(noteNames);
+
+        //rotate screen
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+        driver.rotate(ScreenOrientation.PORTRAIT);
+
+        driver.findElement(By.xpath("//*[@text='"+ noteNameList[0] + "']"));
+        driver.findElement(By.xpath("//*[@text='"+ noteNameList[1] + "']"));
+        driver.findElement(By.xpath("//*[@text='"+ noteNameList[2] + "']"));
+        driver.findElement(By.xpath("//*[@text='"+ noteNameList[3] + "']"));
+    }
+
+    @Test
+    public void testAddTaskListsScrollNavigationDrawer(){
+
+        for(String name : taskListNames){
+            createTaskList(name);
+            openDrawer();
+        }
+
+        driver.scrollTo("Settings").click();
+        driver.findElement(By.xpath("//*[@text='Appearance']"));
+    }
 
 
     // HELPERS
@@ -372,6 +427,10 @@ public class NotesTest {
                 + " or @text=\"" + text + "\"" + ")]");
     }
 
+    private void createNewNoteWithName(String name){
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/fab")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/taskText")).sendKeys(name);
+    }
 
     private void createNotes(String[] noteNames){
         for (int i = 0; i < noteNames.length; i++){
@@ -379,6 +438,14 @@ public class NotesTest {
             navigateUp();
         }
     }
+
+    private void createTaskList(String name) {
+        driver.scrollTo("Create new");
+        driver.findElement(By.xpath("//android.widget.TextView[contains(@text, 'Create')]")).click();
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/titleField")).sendKeys(name);
+        driver.findElement(By.id("com.nononsenseapps.notepad:id/dialog_yes")).click();
+    }
+
 
     private List<WebElement> getNotesInNotesList() {
         return (List<WebElement>) new ArrayList<WebElement>(driver.findElementsByAccessibilityId("Item title"));
@@ -388,13 +455,6 @@ public class NotesTest {
         driver.findElementByAccessibilityId("Navigate up").click();
 
     }
-
-    private void createNewNoteWithName(String name){
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/fab")).click();
-        driver.findElement(By.id("com.nononsenseapps.notepad:id/taskText")).sendKeys(name);
-    }
-
-
 
     private void closeDrawer(){
         WebElement drawerLayout = driver.findElementByAccessibilityId("The drawer layout");
@@ -410,6 +470,20 @@ public class NotesTest {
     private void openDrawer() {
 
         driver.findElementByAccessibilityId("Open navigation drawer").click();
+    }
+
+    private String getMonthAndYear(){
+
+        String date = DateFormat.getDateInstance(DateFormat.LONG).format(new Date());
+        //27 June 2016
+        String month = date.substring(date.indexOf(" "), date.lastIndexOf(" "));
+//        String day = date.substring(date.indexOf(" ")+1, date.indexOf(","));
+
+        //not the neatest way to do this, but should work until 2100 period
+        String year =  date.substring(date.indexOf("20"), date.indexOf("20")+4);
+
+        return month + " " + year;
+        //16 June 2016
     }
 
 //

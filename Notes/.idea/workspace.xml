@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee88922f-9a61-44e5-ab60-26ce43b45fc4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NotesFaultyTests.java" afterPath="$PROJECT_DIR$/src/NotesFaultyTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NotesTest.java" afterPath="$PROJECT_DIR$/src/NotesTest.java" />
     </list>
     <ignored path="Notes Test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="NotesTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NotesTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+            <state relative-caret-position="-775">
+              <caret line="207" column="48" selection-start-line="207" selection-start-column="48" selection-end-line="207" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,13 +37,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotesFaultyTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NotesFaultyTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1177">
-              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+            <state relative-caret-position="1525">
+              <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4018#4019#0" expanded="false" />
+                <element signature="e#4091#4092#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -68,8 +70,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/NotesTest.java" />
         <option value="$PROJECT_DIR$/src/NotesFaultyTests.java" />
+        <option value="$PROJECT_DIR$/src/NotesTest.java" />
       </list>
     </option>
   </component>
@@ -111,6 +113,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -140,7 +143,6 @@
         </subPane>
         <subPane subId="Tests" />
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane />
@@ -159,15 +161,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne">
-    <configuration default="false" name="NotesTest.testCreateNoteAndDeleteIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.NotesTest.testAddNotesOrderByDueDate">
+    <configuration default="false" name="NotesTest.testAddNewNoteWithReminderDateAndTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testCreateNoteAndDeleteIt" />
+      <option name="METHOD_NAME" value="testAddNewNoteWithReminderDateAndTime" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -181,14 +183,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.testCreateTaskListAndDeleteIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesTest.testAddTaskListAndRotateScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testCreateTaskListAndDeleteIt" />
+      <option name="METHOD_NAME" value="testAddTaskListAndRotateScreen" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -202,14 +204,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesTest.testAddNotesAndRotateScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="addBigNumberOfNotesScrollDownAndDeleteOne" />
+      <option name="METHOD_NAME" value="testAddNotesAndRotateScreen" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -223,14 +225,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesTest.testAddTaskListsScrollNavigationDrawer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testAddBigNumberOfNotesScrollDownAndDeleteOne" />
+      <option name="METHOD_NAME" value="testAddTaskListsScrollNavigationDrawer" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -244,14 +246,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="NotesTest.testCompletedTasksAreCleared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NotesTest.testAddNotesOrderByDueDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Notes" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotesTest" />
-      <option name="METHOD_NAME" value="testCompletedTasksAreCleared" />
+      <option name="METHOD_NAME" value="testAddNotesOrderByDueDate" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -500,19 +502,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateTaskListAndDeleteIt" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testCompletedTasksAreCleared" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithReminderDateAndTime" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListAndRotateScreen" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNotesAndRotateScreen" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListsScrollNavigationDrawer" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNotesOrderByDueDate" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testCompletedTasksAreCleared" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.addBigNumberOfNotesScrollDownAndDeleteOne" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateTaskListAndDeleteIt" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testCreateNoteAndDeleteIt" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNotesOrderByDueDate" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListsScrollNavigationDrawer" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNotesAndRotateScreen" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddTaskListAndRotateScreen" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.NotesTest.testAddNewNoteWithReminderDateAndTime" />
       </list>
     </recent_temporary>
   </component>
@@ -555,35 +557,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 04m 19s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 35m 42s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 04m 28s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 37m 13s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 05m 07s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 38m 53s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 20m 23s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 40m 42s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 20m 40s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 41m 17s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 24m 21s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 42m 04s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 34m 33s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 45m 05s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 35m 06s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 46m 57s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testAddBigNumberOfNotesScrollDownAndDeleteOne - 2016.06.17 at 13h 35m 42s.xml">
-      <configuration name="NotesTest.testAddBigNumberOfNotesScrollDownAndDeleteOne" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddNotesOrderByDueDate - 2016.06.27 at 13h 48m 47s.xml">
+      <configuration name="NotesTest.testAddNotesOrderByDueDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotesTest_testCompletedTasksAreCleared - 2016.06.17 at 13h 13m 44s.xml">
-      <configuration name="NotesTest.testCompletedTasksAreCleared" configurationId="JUnit" />
+    <history-entry file="NotesTest_testAddTaskListsScrollNavigationDrawer - 2016.06.27 at 10h 11m 23s.xml">
+      <configuration name="NotesTest.testAddTaskListsScrollNavigationDrawer" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -597,13 +599,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18594104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37868482" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17864583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17864583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -612,6 +613,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -642,6 +644,69 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
+          <folding>
+            <element signature="e#4018#4019#0" expanded="false" />
+            <element signature="e#4091#4092#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
+          <folding>
+            <element signature="e#4018#4019#0" expanded="false" />
+            <element signature="e#4091#4092#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1975">
+          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4018#4019#0" expanded="false" />
+            <element signature="e#4091#4092#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
           <folding>
@@ -655,7 +720,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4018#4019#0" expanded="false" />
+            <element signature="e#4091#4092#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -794,27 +860,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="122" column="3" selection-start-line="122" selection-start-column="3" selection-end-line="122" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
           <folding>
-            <element signature="e#3293#3294#0" expanded="true" />
-            <element signature="e#3339#3340#0" expanded="true" />
+            <element signature="e#4018#4019#0" expanded="false" />
+            <element signature="e#4091#4092#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NotesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NotesFaultyTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1177">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        <state relative-caret-position="-775">
+          <caret line="207" column="48" selection-start-line="207" selection-start-column="48" selection-end-line="207" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
